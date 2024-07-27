@@ -4,15 +4,8 @@
 }
 
 .left {
-  flex: 1; 
-  background-color: #f0f0f0; 
-  box-sizing: border-box;
-}
-
-.right {
-  flex: 1; 
-  background-color: #ffffff;
-  padding: 20px;
+  flex: 1;
+  background-color: #f0f0f0;
   box-sizing: border-box;
 }
 
@@ -26,9 +19,42 @@
   color: #00BFFF;
 }
 
-.chats-section {
-  flex: 1;
-  overflow-y: auto;
+.right {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+  flex: 3; 
+  position: relative; 
+}
+
+.profileSection {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  flex: 0 0 auto; 
+  padding: 16px;
+}
+
+.chatSection {
+  flex: 1; 
+  overflow-y: auto; 
   background-color: #ffffff;
+  padding: 16px;
+}
+
+.inputWrapper {
+  background-color: #f0f0f0;
+  border-top: 2px solid #ddd;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  position: absolute; 
+  bottom: 0; 
+  width: 100%; 
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
