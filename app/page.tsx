@@ -3,14 +3,14 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main>
+    <main content="width=device-width, initial-scale=1.0" >
       <div className="styles.right">
         <div className="styles.profileSection">
-          {/* Місце для профілю */}
+          {}
           <h2>Profile</h2>
         </div>
         <div className="styles.chatSection">
-          {/* Місце для чату */}
+          {}
           <h2>Chat</h2>
         </div>
         <div className="inputWrapper">

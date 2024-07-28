@@ -17,7 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="wrapper">
+      <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Responsive Layout</title>
+    <link rel="stylesheet" href="styles.css"></link>
+      </head>
+      <body className="wrapper" content="width=device-width, initial-scale=1.0">
         <div className="left">
           <div className="search-section">
             <input
