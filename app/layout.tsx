@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { connectToMongoDB } from "@/lib/database";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,12 +16,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  connectToMongoDB()
   return (
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Responsive Layout</title>
-        <link rel="stylesheet" href="styles.css"></link>
+        <title>ChatApp</title>
       </head>
       <body className="wrapper">
         <div className="left">
