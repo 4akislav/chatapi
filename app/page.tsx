@@ -1,17 +1,23 @@
+'use client'
 import Image from "next/image";
 import styles from "./page.module.css";
+import { run } from "@/models/users";
+
 
 export default function RightSide() {
   return (
     <main content="width=device-width, initial-scale=1.0" >
       <div className="right">
+        
         <div className="profileSection">
+          
           {}
-          <h2>Profile</h2>
+          <h2>Profile</h2><button className='search-button' onClick={run}></button>
         </div>
         <div className="chatSection">
           {}
           <h2>Chat</h2>
+          
         </div>
         <div className="inputWrapper">
           <input
@@ -20,6 +26,7 @@ export default function RightSide() {
             className="input"
             
           />
+          
           <div>
           <img src="https://static-00.iconduck.com/assets.00/send-icon-2048x2020-jrvk5f1r.png"
           width={20}/>

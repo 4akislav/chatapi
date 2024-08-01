@@ -1,34 +1,30 @@
 
-import mongoose, { Document, Model } from "mongoose";
+import mongoose,{ Schema, model, connect} from "mongoose";
 
-export interface Chat {
+interface IChat {
   userName: string;
-  chatContent: number;
+  chatContent: string;
 }
 
-export interface ITodoDocument extends Chat, Document {
-  createdAt: Date;
-  updatedAt: Date;
-}
 
-const todoSchema = new mongoose.Schema<ITodoDocument>(
-  {
-    userName: {
-      type: String,
-      required: true,
-    },
-    chatContent: {
-      type: Number,
-      required: true,
-    },
-  },
-  {
-
-    timestamps: true,
-  }
+export const chatSchema = new Schema({
+    userName: { type: String, required: true },
+    chatContent: { type: String, required: true }},
+  { timestamps: true }
 );
 
-const Todo: Model<ITodoDocument> =
-  mongoose.models?.Todo || mongoose.model("Todo", todoSchema);
+const Chat = model<IChat>('Chat', chatSchema)
 
-export default Todo;
+run().catch(err => console.log(err))
+
+export async function run() {
+  await connect(process.env.MONGODB_URI!)
+
+  const chat = new Chat({
+    userName: "David",
+    chatContent: "Hello donbass"
+  });
+  await chat.save();
+
+  console.log(chat.userName)
+}
